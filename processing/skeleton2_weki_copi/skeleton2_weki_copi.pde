@@ -1,11 +1,12 @@
 /*
+Joaku De Sotavento
+
+Modofictaion to the example of the library
+
+KinectPV2, Kinect for Windows v2 library for processing
 Thomas Sanchez Lengeling.
- http://codigogenerativo.com/
- 
- KinectPV2, Kinect for Windows v2 library for processing
- 
- Skeleton color map example.
- Skeleton (x,y) positions are mapped to match the color Frame
+http://codigogenerativo.com/
+
  */
 
 import KinectPV2.KJoint;
