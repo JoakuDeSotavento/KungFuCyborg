@@ -1,12 +1,12 @@
 /*
 Joaku De Sotavento
-
-Modofictaion to the example of the library
-
-KinectPV2, Kinect for Windows v2 library for processing
-Thomas Sanchez Lengeling.
-http://codigogenerativo.com/
-
+ 
+ Modofictaion to the example of the library
+ 
+ KinectPV2, Kinect for Windows v2 library for processing
+ Thomas Sanchez Lengeling.
+ http://codigogenerativo.com/
+ 
  */
 
 import KinectPV2.KJoint;
@@ -56,8 +56,8 @@ void draw() {
 
   image(kinect.getColorImage(), 0, 0, width, height);
 
-  // esto me da todos los datos de eskeleton
-  // array de tipo KSKeleton
+  // this gives all the SKELETON DATA
+  //  KSKeleton kind array
   ArrayList<KSkeleton> skeletonArray =  kinect.getSkeletonColorMap();
 
   pushStyle();
@@ -82,6 +82,7 @@ void draw() {
       //float Kx = otrasJoints[KinectPV2.JointType_Head].getX();
       //float Ky = otrasJoints[KinectPV2.JointType_Head].getY();
 
+      // this print the value on screen of the sended data
       pushStyle();
       stroke(20, 255, 60);
       //ellipse(Kx, Ky, 100, 100);
@@ -101,12 +102,12 @@ void draw() {
     KSkeleton skeleton = (KSkeleton) skeletonArray.get(i);
     if (skeleton.isTracked()) {
       KJoint[] joints = skeleton.getJoints();
-
       color col  = skeleton.getIndexColor();
       fill(col);
       stroke(col);
 
-      // este es el bueno
+      // this comand draw all the skeleton 
+      // from here a took the data originally
       drawBody(joints);
 
       //draw different color for each hand state
@@ -117,12 +118,6 @@ void draw() {
 
   fill(255, 0, 0);
   text(frameRate, 50, 50);
-
-
-  //// esta es la parte de osc Wekinator
-  //if (frameCount % 2 == 0) {
-  //  sendOsc();
-  //}
 }
 
 void makeOscMessage(KJoint[] _otrasJoints) {
@@ -146,6 +141,11 @@ void makeOscMessage(KJoint[] _otrasJoints) {
    */
 
   wings.clear();
+
+  pushMatrix();
+  translate(_otrasJoints[KinectPV2.JointType_SpineShoulder].getX(), _otrasJoints[KinectPV2.JointType_SpineShoulder].getY(), _otrasJoints[KinectPV2.JointType_SpineShoulder].getZ());
+  ellipse(0, 0, 25, 25);
+
 
   wings.append(_otrasJoints[KinectPV2.JointType_ShoulderRight].getX());
   wings.append(_otrasJoints[KinectPV2.JointType_ShoulderRight].getY());
@@ -195,6 +195,8 @@ void makeOscMessage(KJoint[] _otrasJoints) {
   wings.append(_otrasJoints[KinectPV2.JointType_HandTipLeft].getX());
   wings.append(_otrasJoints[KinectPV2.JointType_HandTipLeft].getY());
   //wings.append(_otrasJoints[KinectPV2.JointType_HandTipLeft].getZ());
+
+  popMatrix();
 }
 
 // very important note for wekinator: right now the program is sending 24 inputs
