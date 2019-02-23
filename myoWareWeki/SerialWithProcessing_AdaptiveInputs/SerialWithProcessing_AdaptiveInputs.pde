@@ -53,7 +53,7 @@ void setup() {
      
   //Set up OSC:
   oscP5 = new OscP5(this,9000); //This port isn't important (we're not receiving OSC)
-  dest = new NetAddress("127.0.0.1",6449); //Send to port 6448
+  dest = new NetAddress("127.0.0.1",6448); //Send to port 6448
 }
 
 //Called when new port (n-th) selected in drop-down

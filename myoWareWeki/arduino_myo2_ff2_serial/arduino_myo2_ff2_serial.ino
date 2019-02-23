@@ -24,9 +24,9 @@ void setup() {
 void loop() {
   //New variables are declared to store the readings of the respective pins
   int Myo_0 = analogRead(AnalogPin0);
-  int Myo_1 = analogRead(AnalogPin1);
+  //int Myo_1 = analogRead(AnalogPin1);
   //int Myo_2 = analogRead(AnalogPin2);
-  //int Myo_3 = analogRead(AnalogPin3);
+  int Myo_3 = analogRead(AnalogPin3);
   int Fforce_0 = analogRead(AnalogPin4);
   //int Fforce_1 = analogRead(AnalogPin5);
   int Fforce_2 = analogRead(AnalogPin6);
@@ -38,18 +38,18 @@ void loop() {
 
   Serial.print(Myo_0, DEC);
   Serial.print(",");
-  Serial.print(Myo_1, DEC);
-  Serial.print(",");
+  //Serial.print(Myo_1, DEC);
+  //Serial.print(",");
   //Serial.print(Myo_2, DEC);
   //Serial.print(",");
-  //Serial.print(Myo_3, DEC);
-  //Serial.print(",");
+  Serial.print(Myo_3, DEC);
+  Serial.print(",");
   Serial.print(Fforce_0, DEC);
   Serial.print(",");
   //Serial.print(Fforce_1, DEC);
   //Serial.print(",");
   Serial.print(Fforce_2, DEC);
-  Serial.print(",");
+  //Serial.print(",");
   //Serial.print(Fforce_3, DEC);
   Serial.println();
   delay(5); // For illustration purposes only. This will slow down your program if not removed
