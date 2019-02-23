@@ -45,7 +45,7 @@ void setup() {
   textFont(f);
 
   /* start oscP5, listening for incoming messages at port 12000 */
-  oscP5 = new OscP5(this, 9000);
+  oscP5 = new OscP5(this, 12000);
   dest = new NetAddress("127.0.0.1", 6448);
   // important It send to two directions
   dest2 = new NetAddress("127.0.0.1", 7448);

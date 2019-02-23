@@ -52,5 +52,5 @@ void loop() {
   Serial.print(",");
   Serial.print(Fforce_3, DEC);
   Serial.println();
-  delay(5); // For illustration purposes only. This will slow down your program if not removed
+  //delay(500); // For illustration purposes only. This will slow down your program if not removed
 }
