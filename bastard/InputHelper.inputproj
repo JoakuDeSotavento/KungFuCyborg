@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<WekiInputHelperFileData>
+  <oscReceivePort>6448</oscReceivePort>
+  <oscSendPort>7400</oscSendPort>
+  <sendHostname>MACBOOKPRO-A50E</sendHostname>
+  <sendOscMessage>/giveme</sendOscMessage>
+  <inputs>
+    <oscMessage>/wek/inputs</oscMessage>
+    <numInputs>8</numInputs>
+    <groupName>Inputs</groupName>
+    <inputNames>
+      <string>inputs_1</string>
+      <string>inputs_2</string>
+      <string>inputs_3</string>
+      <string>inputs_4</string>
+      <string>inputs_5</string>
+      <string>inputs_6</string>
+      <string>inputs_7</string>
+      <string>inputs_8</string>
+    </inputNames>
+  </inputs>
+  <outputs>
+    <outputs class="linked-list">
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>inputs_1_Avg10</name>
+        <index>0</index>
+        <windowSize>10</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.WindowedOperation>
+        <name>inputs_4_Avg10(2)</name>
+        <index>3</index>
+        <windowSize>10</windowSize>
+        <op class="wekiinputhelper.Modifiers.AverageWindowOperation"/>
+      </wekiinputhelper.Modifiers.WindowedOperation>
+      <wekiinputhelper.Modifiers.SecondOrderDifference>
+        <name>inputs_1_2ndOrderDiff</name>
+        <index>0</index>
+      </wekiinputhelper.Modifiers.SecondOrderDifference>
+    </outputs>
+    <numOutputTypes>3</numOutputTypes>
+    <dimensionality>3</dimensionality>
+    <hasDependencies>false</hasDependencies>
+  </outputs>
+  <inputTriggerer class="wekiinputhelper.TriggerOnReceive">
+    <c>
+      <type>NONE</type>
+      <howLong>ONCE</howLong>
+      <index>0</index>
+      <val>0.0</val>
+      <appliesTo>INPUT</appliesTo>
+    </c>
+  </inputTriggerer>
+  <isSendingOriginalInputs>false</isSendingOriginalInputs>
+</WekiInputHelperFileData>
