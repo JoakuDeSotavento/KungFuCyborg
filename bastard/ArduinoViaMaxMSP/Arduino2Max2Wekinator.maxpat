@@ -312,7 +312,7 @@
 					"bgfillcolor_type" : "color",
 					"fontsize" : 9.0,
 					"id" : "obj-6",
-					"items" : [ "COM6", ",", "COM7", ",", "COM8", ",", "usbmodem1411", ",", "Bluetooth-Modem", ",", 5, ",", 6, ",", 7 ],
+					"items" : [ "COM7", ",", "COM8", ",", "COM10", ",", "usbmodem1411", ",", "Bluetooth-Modem", ",", 5, ",", 6, ",", 7 ],
 					"labelclick" : 1,
 					"maxclass" : "umenu",
 					"numinlets" : 1,
@@ -3994,7 +3994,7 @@
 									"outlettype" : [ "int", "" ],
 									"patching_rect" : [ 129.0, 365.0, 91.0, 19.0 ],
 									"style" : "",
-									"text" : "serial f 115200 8 1 0"
+									"text" : "serial j 115200 8 1 0"
 								}
 
 							}
